@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {BodyText} from '../../style/texts'
 
 
 const MobileVehicleCardContainer = styled.div`
@@ -69,7 +70,6 @@ const MobileVehicleDetailsContainer = styled.div`
     height: 127px;
     left: 0;
     top: 84px;
-    background: rebeccapurple;
     flex: none;
 `
 
@@ -104,8 +104,30 @@ const MobilePricingContainer = styled.div`
     order: 1;
     flex-grow: 1;
     margin: 0 6px;
-    background: coral;
+
+    span {
+        height: 24px;
+        display: flex;
+        left: calc(50% - 171.5px/2);
+        top: 0;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+
+        ${BodyText} {
+            margin-left: 5px;
+        }
+    }
 `
+
+const MobilePrice = styled(BodyText)`
+    position: static;
+    left: calc(50% - 48px/2 - 61.75px);
+    top: 0;
+    margin-left: 0;
+`
+
 
 const MobileSpecContainer = styled.div`
     display: flex;
@@ -167,7 +189,8 @@ const MobileVehicleCard = ({image, vehicle}) => {
 
                     </MobileSpecContainer>
                     <MobilePricingContainer>
-
+                        <span>&pound;550.90 <BodyText>/mo (PCP)</BodyText></span>
+                        <MobilePrice>&pound;{vehicle["price_ex_vat"]}</MobilePrice>
                     </MobilePricingContainer>
                 </MobileSpecPricingContainer>
             </MobileVehicleDetailsContainer>
