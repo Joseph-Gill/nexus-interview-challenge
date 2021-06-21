@@ -6,11 +6,8 @@ import MobileVehicleCard from '../../components/MobileVehicleCard'
 
 
 const PageContainer = styled.div`
-    //padding-top: 60px;
     position: relative;
     width: 100vw;
-    //min-height: 100vh;
-    //width: 100%;
 `
 
 const VehicleListContainer = styled.div`
@@ -33,30 +30,14 @@ const SearchPage = () => {
                     image={vehicleOne}
                     vehicle={exampleJSON}
                 />
-                {/*<VehicleCard*/}
-                {/*    image={vehicleOne}*/}
-                {/*    vehicle={exampleJSON}*/}
-                {/*/>*/}
-                {/*<VehicleCard*/}
-                {/*    image={vehicleOne}*/}
-                {/*    vehicle={exampleJSON}*/}
-                {/*/>*/}
-                {/*<VehicleCard*/}
-                {/*    image={vehicleOne}*/}
-                {/*    vehicle={exampleJSON}*/}
-                {/*/>*/}
-                {/*<VehicleCard*/}
-                {/*    image={vehicleOne}*/}
-                {/*    vehicle={exampleJSON}*/}
-                {/*/>*/}
-                {/*<VehicleCard*/}
-                {/*    image={vehicleOne}*/}
-                {/*    vehicle={exampleJSON}*/}
-                {/*/>*/}
-                {/*<VehicleCard*/}
-                {/*    image={vehicleOne}*/}
-                {/*    vehicle={exampleJSON}*/}
-                {/*/>*/}
+                <MobileVehicleCard
+                    image={vehicleOne}
+                    vehicle={exampleJSON}
+                />
+                <MobileVehicleCard
+                    image={vehicleOne}
+                    vehicle={exampleJSON}
+                />
             </VehicleListContainer>
         </PageContainer>
     )

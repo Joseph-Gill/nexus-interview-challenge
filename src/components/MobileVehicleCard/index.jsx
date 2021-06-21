@@ -5,27 +5,28 @@ import {BodyText} from '../../style/texts'
 
 const MobileVehicleCardContainer = styled.div`
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center;
-    padding: 0;
-    position: static;
     width: 375px;
     height: 211px;
-    left: 0;
-    top: 20px;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    background: rebeccapurple;
 `
 
 const MobileVehicleImageGalleryContainer = styled.div`
-    flex-direction: row;
     position: relative;
-    width: 100%;
+    width: 365px;
     height: 84px;
-    left: calc(50% - 349px/2);
+    left: calc(50% - 365px/2);
     top: 0;
-    border-radius: 16px;
+    overflow-x: scroll;
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    ::-webkit-scrollbar {
+        display: none;
+    };
 `
 
 const MobileVehicleImage = styled.img`
@@ -41,19 +42,10 @@ const MobileVehicleImageGallery = styled.div`
     align-items: flex-start;
     padding: 0;
     position: absolute;
-    width: 100vw;
+    width: 703px;
     height: 84px;
     left: 0;
     top: 0;
-    overflow-x: scroll;
-    /* Hide scrollbar for IE, Edge and Firefox */
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;
-
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    ::-webkit-scrollbar {
-        display: none;
-    };
 
     ${MobileVehicleImage}:nth-child(1){
         margin-left: 0;
@@ -83,11 +75,6 @@ const MobileSpecPricingContainer = styled.div`
     height: 42px;
     left: 20px;
     top: 65px;
-    background: aqua;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-    margin: 6px 0;
 `
 
 const MobilePricingContainer = styled.div`
@@ -100,10 +87,6 @@ const MobilePricingContainer = styled.div`
     height: 42px;
     left: 177.5px;
     top: 0;
-    flex: none;
-    order: 1;
-    flex-grow: 1;
-    margin: 0 6px;
 
     span {
         height: 24px;
@@ -140,10 +123,6 @@ const MobileSpecContainer = styled.div`
     height: 42px;
     left: 0;
     top: 0;
-    flex: none;
-    order: 0;
-    flex-grow: 1;
-    margin: 0 6px;
     background: darkgreen;
 `
 
@@ -153,17 +132,13 @@ const MobileHeadingContainer = styled.div`
     height: 39px;
     left: 20px;
     top: 20px;
-    flex: none;
-    order: 0;
-    align-self: stretch;
-    flex-grow: 0;
-    margin: 6px 0;
     background: gray;
 `
 
 
 const MobileVehicleCard = ({image, vehicle}) => {
     console.log(vehicle)
+
 
     const renderGallery = () => {
         const result = []
