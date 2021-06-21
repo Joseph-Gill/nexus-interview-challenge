@@ -10,7 +10,7 @@ const MobileVehicleCardContainer = styled.div`
     align-items: center;
     width: 375px;
     height: 211px;
-    background: rebeccapurple;
+    background: lightblue;
 `
 
 const MobileVehicleImageGalleryContainer = styled.div`
@@ -111,6 +111,10 @@ const MobilePrice = styled(BodyText)`
     margin-left: 0;
 `
 
+const MobileSpecs = styled(BodyText)`
+    color: ${props => props.theme.textGray};
+`
+
 
 const MobileSpecContainer = styled.div`
     display: flex;
@@ -123,7 +127,27 @@ const MobileSpecContainer = styled.div`
     height: 42px;
     left: 0;
     top: 0;
-    background: darkgreen;
+`
+
+const SpecsRowContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    position: static;
+    width: 171.5px;
+    height: 18px;
+    left: 0;
+    top: 3px;
+`
+
+const SpecsRowSpacer = styled(BodyText)`
+    position: static;
+    width: 4px;
+    height: 18px;
+    left: calc(50% - 4px/2 - 23.75px);
+    top: 0;
+    color: ${props => props.theme.spacerGray};
 `
 
 const MobileHeadingContainer = styled.div`
@@ -137,8 +161,6 @@ const MobileHeadingContainer = styled.div`
 
 
 const MobileVehicleCard = ({image, vehicle}) => {
-    console.log(vehicle)
-
 
     const renderGallery = () => {
         const result = []
@@ -146,6 +168,14 @@ const MobileVehicleCard = ({image, vehicle}) => {
             result.push(<MobileVehicleImage alt='vehicle image' key={i} src={image} />)
         }
         return result
+    }
+
+    const createOdometerText = () => vehicle["odometer_value"].toString().slice(0,2).concat('k miles')
+
+    const createTransmissionText = () => {
+        const transmissionType = vehicle["transmission"]
+        const firstLetter = transmissionType.charAt(0).toUpperCase()
+        return firstLetter.concat(transmissionType.slice(1).toLowerCase())
     }
 
     return (
@@ -161,7 +191,16 @@ const MobileVehicleCard = ({image, vehicle}) => {
                 </MobileHeadingContainer>
                 <MobileSpecPricingContainer>
                     <MobileSpecContainer>
-
+                        <SpecsRowContainer>
+                            <MobileSpecs>{createOdometerText()}</MobileSpecs>
+                            <SpecsRowSpacer>|</SpecsRowSpacer>
+                            <MobileSpecs>{vehicle["fuel_type"]}</MobileSpecs>
+                        </SpecsRowContainer>
+                        <SpecsRowContainer>
+                            <MobileSpecs>{createTransmissionText()}</MobileSpecs>
+                            <SpecsRowSpacer>|</SpecsRowSpacer>
+                            <MobileSpecs>{vehicle["body_type"]}</MobileSpecs>
+                        </SpecsRowContainer>
                     </MobileSpecContainer>
                     <MobilePricingContainer>
                         <span>&pound;550.90 <BodyText>/mo (PCP)</BodyText></span>

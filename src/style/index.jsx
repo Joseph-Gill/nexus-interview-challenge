@@ -15,6 +15,8 @@ export const defaultTheme = {
     // Colors
     white: '#FFFFFF',
     black: '#000000',
+    textGray: '#55595D',
+    spacerGray: '#D1D6E0',
     //Fonts
     robotoFontFamily: 'Roboto, sans-serif',
 }
