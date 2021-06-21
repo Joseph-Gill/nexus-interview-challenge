@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+#   Rational
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Accurately recreate the visuals found: https://www.figma.com/file/MrZR9TZOVrI8pwBjJuDprZ/Code-Review-Template in code.
 
-## Available Scripts
+The focus should be on the element named "Listings Feed" (found via the left column) which contains the main vehicle cards.
+Consider the design as it changes breakpoint, the site content widths and the responsive nature of the design.
+Whilst there is no need to recreate the other elements on the page (e.g. site header/footer or side filters) you should consider their positioning and how they interact with your work (TIP: using placeholder elements just to fill those spaces might be a good idea)
 
-In the project directory, you can run:
 
-### `yarn start`
+#   Requirements
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clean, semantic and accessible CSS and HTML, written to best practices.  Assume only the latest browser support required (no IE).
+Use GitHub to track changes and commit your code to.  There is an example of vehicle data at the end of this doc if you want to use it which represents typical response data from the api.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+#   Tools
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+As we develop using Nuxt (Vue), ideally use this way of working but generally feel free to achieve this in the way you normally work or in a way you think will deliver the best results.
+There is no wrong or right way here and please don't think of this is a "test", it is simply to see how you structure your code and how you accurately you create the UI.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#   Timescales
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This is not a timed challenge but please be aware that under normal circumstances work like this would be estimated and resourced accordingly.
+Please try to push complete work within a few days, if you are unable to complete within this time please get in touch and make us aware.
+Don't spend a ton of time on this, we just want to get an impression of how you code and your accuracy.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+#   Questions
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Feel free to contact me with any questions, any time, at rob.dillon@nexuspoint.co.uk
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#   Completion
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+If needed please ensure there are adequate instructions to build/run the work. Once complete please email me and we'll organise sharing/etc
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+##  JSON (example)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Below is a typical example of the data returned from the api for a single vehicle (note: finance is done separately).  If you prefer to use any of this data feel free to do so.
