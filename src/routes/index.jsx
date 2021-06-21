@@ -8,8 +8,8 @@ import {SEARCH} from './paths'
 const Routes = () => {
     return (
         <Router>
+            <Header />
             <Switch>
-                <Header />
                 <Route component={SearchPage} exact path={SEARCH} />
             </Switch>
         </Router>

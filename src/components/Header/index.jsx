@@ -4,12 +4,14 @@ import {device as devices} from '../../style/devices'
 
 
 const HeaderContainer = styled.div`
+    display: flex;
     width: 100%;
     height: 60px;
     //background: ${props => props.theme.white};
     background: red;
-    position: static;
+    position: fixed;
     box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.15);
+    z-index: 999;
 
     @media ${devices.tablet} {
         height: 80px;
@@ -21,11 +23,14 @@ const HeaderContainer = styled.div`
 `
 
 
-const Header = () => {
+const Header = ({children}) => {
     return (
-        <HeaderContainer>
+        <>
+            <HeaderContainer>
 
-        </HeaderContainer>
+            </HeaderContainer>
+            {children}
+        </>
     )
 }
 
