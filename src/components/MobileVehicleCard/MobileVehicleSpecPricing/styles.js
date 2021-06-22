@@ -14,7 +14,7 @@ export const MobilePricingContainer = styled.div`
     top: 0;
 
     span {
-        height: 24px;
+        height: 22px;
         display: flex;
         left: calc(50% - 171.5px/2);
         top: 0;
@@ -57,7 +57,7 @@ export const MobileSpecContainer = styled.div`
 export const SpecsRowContainer = styled.div`
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     padding: 0;
     position: static;
     width: 171.5px;

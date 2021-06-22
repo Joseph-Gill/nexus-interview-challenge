@@ -1,5 +1,5 @@
 import React from 'react'
-import {createFirstLetterUppercaseOnly, createOdometerText} from '../../../helpers'
+import {createFirstLetterUppercaseOnly, createOdometerText, createPriceText} from '../../../helpers'
 import {BodyText} from '../../../style/texts'
 import {MobilePrice, MobilePricingContainer, MobileSpecContainer, MobileSpecs, SpecsRowContainer, SpecsRowSpacer} from './styles'
 
@@ -21,7 +21,7 @@ const MobileVehicleSpecPricing = ({vehicle}) => {
             </MobileSpecContainer>
             <MobilePricingContainer>
                 <span>&pound;550.90 <BodyText>/mo (PCP)</BodyText></span>
-                <MobilePrice>&pound;{vehicle["price_ex_vat"]}</MobilePrice>
+                <MobilePrice>&pound;{createPriceText(vehicle)}</MobilePrice>
             </MobilePricingContainer>
         </>
     )
