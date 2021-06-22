@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import {BodyText} from '../../style/texts'
+import purpleStar from '../../assets/images/purple_star.svg'
+import {PurpleStar} from '../../style/images'
+import {createFirstLetterUppercaseOnly, createOdometerText} from '../../helpers'
 
 
 const MobileVehicleCardContainer = styled.div`
@@ -10,7 +13,6 @@ const MobileVehicleCardContainer = styled.div`
     align-items: center;
     width: 375px;
     height: 211px;
-    background: lightblue;
 `
 
 const MobileVehicleImageGalleryContainer = styled.div`
@@ -57,6 +59,7 @@ const MobileVehicleDetailsContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
     padding: 20px;
     width: 375px;
     height: 127px;
@@ -156,7 +159,77 @@ const MobileHeadingContainer = styled.div`
     height: 39px;
     left: 20px;
     top: 20px;
-    background: gray;
+`
+
+const HeadingListingStarContainer = styled.div`
+    position: relative;
+    width: 335px;
+    height: 39px;
+`
+
+const MobileStarContainer = styled.div`
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    right: 0;
+    top: 0;
+`
+
+const MobileTagContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1px 8px;
+    position: absolute;
+    width: 46px;
+    height: 20px;
+    right: 34px;
+    top: 0;
+    background: ${props => props.theme.darkOne};
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 8px;
+`
+
+const TagText = styled(BodyText)`
+    position: static;
+    width: 26px;
+    height: 18px;
+    left: calc(50% - 26px/2);
+    top: 1px;
+    color: ${props => props.theme.white};
+    margin-left: 0;
+`
+
+const ListingContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    position: absolute;
+    width: 349px;
+    height: 39px;
+    left: 0;
+    top: 0;
+`
+
+const VehicleTitleText = styled(BodyText)`
+    line-height: 21px;
+    position: static;
+    width: 349px;
+    height: 21px;
+    left: calc(50% - 349px/2);
+    top: 0;
+    color: ${props => props.theme.black};
+`
+
+const VehicleDescriptionText = styled(BodyText)`
+    position: static;
+    width: 349px;
+    height: 18px;
+    left: calc(50% - 349px/2);
+    top: 21px;
+    color: ${props => props.theme.textGray};
 `
 
 
@@ -170,14 +243,6 @@ const MobileVehicleCard = ({image, vehicle}) => {
         return result
     }
 
-    const createOdometerText = () => vehicle["odometer_value"].toString().slice(0,2).concat('k miles')
-
-    const createTransmissionText = () => {
-        const transmissionType = vehicle["transmission"]
-        const firstLetter = transmissionType.charAt(0).toUpperCase()
-        return firstLetter.concat(transmissionType.slice(1).toLowerCase())
-    }
-
     return (
         <MobileVehicleCardContainer>
             <MobileVehicleImageGalleryContainer>
@@ -187,17 +252,28 @@ const MobileVehicleCard = ({image, vehicle}) => {
             </MobileVehicleImageGalleryContainer>
             <MobileVehicleDetailsContainer>
                 <MobileHeadingContainer>
-
+                    <HeadingListingStarContainer>
+                        <ListingContainer>
+                            <VehicleTitleText>{`${vehicle["plate"]} ${vehicle["make"]}`}</VehicleTitleText>
+                            <VehicleDescriptionText>{`${vehicle["insurance_group"]} ${vehicle["model"]}`}</VehicleDescriptionText>
+                        </ListingContainer>
+                        <MobileTagContainer>
+                            <TagText>{createFirstLetterUppercaseOnly(vehicle["advert_classification"])}</TagText>
+                        </MobileTagContainer>
+                        <MobileStarContainer>
+                            <PurpleStar alt='star' src={purpleStar} />
+                        </MobileStarContainer>
+                    </HeadingListingStarContainer>
                 </MobileHeadingContainer>
                 <MobileSpecPricingContainer>
                     <MobileSpecContainer>
                         <SpecsRowContainer>
-                            <MobileSpecs>{createOdometerText()}</MobileSpecs>
+                            <MobileSpecs>{createOdometerText(vehicle)}</MobileSpecs>
                             <SpecsRowSpacer>|</SpecsRowSpacer>
                             <MobileSpecs>{vehicle["fuel_type"]}</MobileSpecs>
                         </SpecsRowContainer>
                         <SpecsRowContainer>
-                            <MobileSpecs>{createTransmissionText()}</MobileSpecs>
+                            <MobileSpecs>{createFirstLetterUppercaseOnly(vehicle["transmission"])}</MobileSpecs>
                             <SpecsRowSpacer>|</SpecsRowSpacer>
                             <MobileSpecs>{vehicle["body_type"]}</MobileSpecs>
                         </SpecsRowContainer>

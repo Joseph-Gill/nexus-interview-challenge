@@ -17,6 +17,7 @@ export const defaultTheme = {
     black: '#000000',
     textGray: '#55595D',
     spacerGray: '#D1D6E0',
+    darkOne: '#3F3A50',
     //Fonts
     robotoFontFamily: 'Roboto, sans-serif',
 }
