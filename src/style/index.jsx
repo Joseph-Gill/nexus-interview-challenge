@@ -20,4 +20,5 @@ export const defaultTheme = {
     darkOne: '#3F3A50',
     //Fonts
     robotoFontFamily: 'Roboto, sans-serif',
+    overpassFontFamily: 'Overpass, sans-serif',
 }
