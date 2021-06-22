@@ -8,3 +8,10 @@ export const BodyText = styled.p`
     line-height: 18px;
     margin-left: 5px;
 `
+
+export const DesktopBodyText = styled.p`
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+`
