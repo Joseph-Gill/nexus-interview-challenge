@@ -7,3 +7,6 @@ export const createFirstLetterUppercaseOnly = value => {
 
 // Used in vehicle cards to create the correct odometer text value to display
 export const createOdometerText = vehicle => vehicle["odometer_value"].toString().slice(0,2).concat('k miles')
+
+// Used in vehicle cards to get price without decimals
+export const createPriceText = vehicle => vehicle["price_ex_vat"].slice(0, -3)

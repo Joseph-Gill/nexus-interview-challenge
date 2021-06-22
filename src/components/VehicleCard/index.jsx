@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {createFirstLetterUppercaseOnly} from '../../helpers'
+import {createFirstLetterUppercaseOnly, createPriceText} from '../../helpers'
 import {BodyText, DesktopBodyText} from '../../style/texts'
 import VehicleSpecTags from './VehicleSpecTags'
 import {PurpleStar} from '../../style/images'
@@ -76,6 +76,7 @@ const VehicleDetailsContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: space-between;
     padding: 10px 0;
     position: static;
     width: 333px;
@@ -136,6 +137,59 @@ const VehicleDescriptionText = styled(BodyText)`
     margin-left: 0;
 `
 
+const VehiclePricingContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10px;
+    position: static;
+    width: 186.5px;
+    height: 42px;
+    left: 0;
+    top: 0;
+
+    span {
+        display: flex;
+        position: static;
+        width: 143.5px;
+        height: 24px;
+        left: calc(50% - 143.5px/2);
+        top: 0;
+        font-family: ${props => props.theme.overpassFontFamily};
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 24px;
+        color: ${props => props.theme.black};
+    }
+`
+
+const VehicleFinanceLabel = styled(BodyText)`
+    margin-top: 2.5px;
+`
+
+const VehiclePriceContainer = styled.div`
+    display: flex;
+`
+
+const VehiclePrice = styled(BodyText)`
+    position: static;
+    width: 48px;
+    height: 18px;
+    left: calc(50% - 48px/2 - 49.25px);
+    top: 0;
+    color: ${props => props.theme.black};
+    margin-left: 0;
+`
+
+const VehiclePriceCalculate = styled(BodyText)`
+    position: static;
+    width: 53px;
+    height: 18px;
+    left: calc(50% - 53px/2 + 9.25px);
+    top: 0;
+    color: ${props => props.theme.primaryPurple};
+`
 
 const VehicleCard = ({image, vehicle}) => {
     return (
@@ -159,6 +213,13 @@ const VehicleCard = ({image, vehicle}) => {
                         </VehicleHeadingContainer>
                     </HeadingStarContainer>
                 </VehicleHeadingStarContainer>
+                <VehiclePricingContainer>
+                    <span>&pound;550.90<VehicleFinanceLabel>/mo (PCP)</VehicleFinanceLabel></span>
+                    <VehiclePriceContainer>
+                        <VehiclePrice>&pound;{createPriceText(vehicle)}</VehiclePrice>
+                        <VehiclePriceCalculate>Calculate</VehiclePriceCalculate>
+                    </VehiclePriceContainer>
+                </VehiclePricingContainer>
             </VehicleDetailsContainer>
         </VehicleCardContainer>
     )
