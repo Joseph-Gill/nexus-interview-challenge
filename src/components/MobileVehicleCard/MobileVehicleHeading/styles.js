@@ -71,4 +71,5 @@ export const VehicleDescriptionText = styled(BodyText)`
     left: calc(50% - 349px/2);
     top: 21px;
     color: ${props => props.theme.textGray};
+    margin-left: 0;
 `
