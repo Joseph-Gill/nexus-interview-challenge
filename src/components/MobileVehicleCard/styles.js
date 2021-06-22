@@ -28,7 +28,7 @@ export const MobileVehicleImageGalleryContainer = styled.div`
 
 export const MobileVehicleImage = styled.img`
     width: 113px;
-    height: auto;
+    height: 84px;
     border-radius: 16px;
     margin-left: 5px;
 `
