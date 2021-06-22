@@ -62,6 +62,7 @@ export const VehicleTitleText = styled(BodyText)`
     left: calc(50% - 349px/2);
     top: 0;
     color: ${props => props.theme.black};
+    margin-left: 0;
 `
 
 export const VehicleDescriptionText = styled(BodyText)`

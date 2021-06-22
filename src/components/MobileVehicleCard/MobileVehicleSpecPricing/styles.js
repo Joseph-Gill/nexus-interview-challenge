@@ -38,6 +38,7 @@ export const MobilePrice = styled(BodyText)`
 
 export const MobileSpecs = styled(BodyText)`
     color: ${props => props.theme.textGray};
+    margin-left: 0;
 `
 
 
@@ -73,4 +74,5 @@ export const SpecsRowSpacer = styled(BodyText)`
     left: calc(50% - 4px/2 - 23.75px);
     top: 0;
     color: ${props => props.theme.spacerGray};
+    margin-right: 5px;
 `
