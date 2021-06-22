@@ -5,6 +5,7 @@ import vehicleOne from '../../assets/images/vehicle_image_one.svg'
 import vehicleTwo from '../../assets/images/vehicle_image_two.svg'
 import vehicleThree from '../../assets/images/vehicle_image_three.svg'
 import MobileVehicleCard from '../../components/MobileVehicleCard'
+import {useWindowDimensions} from '../../hooks'
 
 
 const PageContainer = styled.div`
@@ -25,6 +26,7 @@ const VehicleListContainer = styled.div`
 
 
 const SearchPage = () => {
+    const windowDimensions = useWindowDimensions()
 
     const vehiclesToRender = [
         {id: 10, image: vehicleOne, vehicleInfo: exampleJSON},
@@ -35,6 +37,7 @@ const SearchPage = () => {
         {id: 15, image: vehicleThree, vehicleInfo: exampleJSON},
     ]
 
+
     const renderMobileCards = () => vehiclesToRender.map(vehicle => (
         <MobileVehicleCard
             image={vehicle.image}
@@ -43,10 +46,18 @@ const SearchPage = () => {
         />
     ))
 
+    const decideCardsRendered = () => {
+        if (windowDimensions.width < 768) {
+            return renderMobileCards()
+        } else {
+            return 'Render Full Size Cards'
+        }
+    }
+
     return (
         <PageContainer>
             <VehicleListContainer>
-                {renderMobileCards()}
+                {decideCardsRendered()}
             </VehicleListContainer>
         </PageContainer>
     )
